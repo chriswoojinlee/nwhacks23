@@ -1,32 +1,32 @@
 import './App.css';
-
-import bgImage from "./components/img/bgImage.png";
-import {Risk, Trip, Plane, Clouds} from './components/Images';
 import Searchbar from "./components/Searchbar";
-import Background from './components/Background';
+import bgImage from "./components/img/bgImage.png";
+import Button from "./components/Button"
+// import PlayButton from "./components/PlayButton"
+import DatePicker from "./components/DatePicker";
+import LandingPage from "./pages/LandingPage";
+import BudgetPage from "./pages/BudgetPage";
+import SuggestionPage from "./pages/SuggestionPage";
 
 const style = {
   background: {backgroundImage: `url(${bgImage})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundsize:'cover',
-    overflow: 'hidden',
-    width: window.innerWidth,
-    height: window.innerHeight
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  resizeMode: 'contain',
+  width: window.outerWidth,
+  height: window.outerHeight
   },
 
 }
 
-
-
 function App() {
   return ( 
-        
-        <div style={style.background}>
-            <Trip/>
-            <Clouds></Clouds>
-            <Plane/>
-            <Risk/>
+
+      <div>
+        <LandingPage /> 
       </div>
+        
   );
 }
 

@@ -53,7 +53,9 @@ const Searchbar = ({placeholder}) => {
           {suggest.map((item, index) => {
             return (
               <div key={index}>
-                <div onClick={() => suggestedText(item)}>{item}</div>
+                <div className="suggestion"
+                onClick={() => suggestedText(item)}>{item}
+                </div>
                 {index !== suggest.length - 1 && <Line />}
               </div>
             );
