@@ -60,6 +60,10 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 justify-content: space-between;
 `
+const airports = () => {
+  
+}
+
 
 export const BudgetPage = () => {
     return ( 
@@ -74,8 +78,7 @@ export const BudgetPage = () => {
                 <input className="search"
                 placeholder="Budget"/>
                 </div>
-                <Searchbar placeholder={"Starting Destination"} />
-            <Searchbar placeholder={"Ending Destination"} />
+                <DatePicker />
             <ButtonContainer>
               <Link to="/suggestion">
               <Button bgColor={true} text={"Search"} />

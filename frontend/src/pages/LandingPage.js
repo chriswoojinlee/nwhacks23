@@ -1,11 +1,14 @@
 import bgImage from "../components/img/bg_image_landing.png";
+import bgLoading from "../components/img/bg_loading.png";
 import React from "react"
 import Searchbar from "../components/Searchbar";
 import DatePicker from "../components/DatePicker";
 import styled from "styled-components";
-import './css/LandingPage.css';
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import loading from "../components/img/loading.gif";
+import { useState } from "react";
+import Background from "../components/Background";
 
 const style = {
     background: {backgroundImage: `url(${bgImage})`,
@@ -52,7 +55,13 @@ align-items: center;
 padding-left: 8%;
 padding-top: 6%;
 position: relative;
+`
 
+const LoadContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
 `
 
 const ButtonContainer = styled.div`
@@ -61,10 +70,14 @@ grid-template-columns: 1fr 1fr;
 justify-content: space-between;
 `
 
-export const LandingPage = () => {
-    return ( 
 
+
+export const LandingPage = () => {
+  
+    return (
             <div style={style.background}>
+              
+                
                 <Container>
                 <Wrapper>
                 <TitleText> The Sky's the Limit</TitleText>
@@ -73,11 +86,13 @@ export const LandingPage = () => {
             <Searchbar placeholder={"Starting Destination"} />
             <Searchbar placeholder={"Ending Destination"} />
             <DatePicker />
+            
             <ButtonContainer>
               <Link to="/info"><Button bgColor={true} text={"Search"} /></Link>
               <Link to="/budget"><Button bgColor={false} text={"Not Sure"} /></Link>
             </ButtonContainer>
 
+            
                 </Wrapper>
                 </Container>
 
@@ -86,5 +101,6 @@ export const LandingPage = () => {
   );
 
   }
+
 
   export default LandingPage;
