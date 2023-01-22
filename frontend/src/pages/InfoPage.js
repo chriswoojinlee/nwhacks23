@@ -82,7 +82,7 @@ const InfoPage = () => {
             <div label="Visa">
               Whore
             </div>
-            <div label="FlightInfo">
+            <div label="Flight Info">
               EM
             </div>
 
