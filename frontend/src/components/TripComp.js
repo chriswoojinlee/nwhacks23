@@ -9,7 +9,7 @@ const styles = {
         borderBottom: '1px solid #ccc',
         top: '16%',
         left: '5%',
-        width: '45%',
+        width: '60%',
         height: '5%',
         borderRadius: 19,
         color: '#7D69A2',
@@ -21,14 +21,16 @@ const styles = {
         fontWeight: 700,
         fontSize: 30,
         position: 'absolute',
-        },
+        gridTemplateColumns: "1fr 1fr"
+        }
     };
 
-const TripComp = ({text}) => {
+const TripComp = ({text, date}) => {
     return (
         <div>
         <div style={styles.trip}>
             {text}
+            {date}
             </div>
         
         </div>
