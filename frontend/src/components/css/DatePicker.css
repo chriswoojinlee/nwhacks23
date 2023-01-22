@@ -1,14 +1,32 @@
-.datepicker {
-    border-radius: 20px !important;
-    border: 1px solid gray !important;
-}
 
-.custom-input {
+
+.custom-input-top {
     border-radius: 15px;
-    border: 1px #0c8af8 solid;
-    padding: 4px 12px;
+    
     background-color: white;
-    height: 22px;
-    box-shadow: 0 0 2px #0074d9;
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-color: none;
+    padding-right: 4%;
+
+
   }
+
+  .custom-input-bottom {
+    border-radius: 15px;
+    
+    background-color: white;
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-color: none;
+    padding-right: 4%;
+
+
+  }
+
+  .react-datepicker-wrapper input[type="text"]{
+    border: none;
+}
   
