@@ -1,15 +1,4 @@
 import './App.css';
-import * as React from 'react';
-import bgImage from "./components/img/bgImage.png";
-import {Risk, Trip, Plane} from './components/Images';
-import Searchbar from "./components/Searchbar";
-import Background from './components/Background';
-import TabButton from './components/TabButton';
-import FlightInfo from './components/FlightInfo';
-import Tabs from './components/TabButton';
-
-import InfoPage from './pages/InfoPage'
-import RiskComp from './components/RiskComp';
 import Searchbar from "./components/Searchbar";
 import bgImage from "./components/img/bgImage.png";
 import Button from "./components/Button"
@@ -17,15 +6,27 @@ import Button from "./components/Button"
 import DatePicker from "./components/DatePicker";
 import LandingPage from "./pages/LandingPage";
 import BudgetPage from "./pages/BudgetPage";
-import SuggestionPage from "./pages/SuggestionPage";     
+import SuggestionPage from "./pages/SuggestionPage";
 
+const style = {
+  background: {backgroundImage: `url(${bgImage})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  resizeMode: 'contain',
+  width: window.outerWidth,
+  height: window.outerHeight
+  },
+
+}
 
 function App() {
   return ( 
-        <div >
-        <InfoPage/>
+
+      <div>
+        <LandingPage /> 
       </div>
-       
+        
   );
 }
 
