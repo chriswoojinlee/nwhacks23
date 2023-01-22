@@ -13,8 +13,9 @@ const styles = {
         height: '5%',
         borderRadius: 19,
         color: '#7D69A2',
-
-        textAlign: 'center',
+        
+        textAlign: 'left',
+        padding: "0px 0px 0px 30px",
         filter: 'drop-shadow(0px 3px 2px #707070)',
         fontFamily:'Gotham-Medium, Gotham',
         fontWeight: 700,
@@ -27,9 +28,7 @@ const TripComp = ({text}) => {
     return (
         <div>
         <div style={styles.trip}>
-           
             {text}
-            
             </div>
         
         </div>

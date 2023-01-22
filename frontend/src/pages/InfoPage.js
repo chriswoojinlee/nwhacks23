@@ -5,6 +5,8 @@ import Tabs from '../components/TabButton';
 import RiskComp from '../components/RiskComp';
 import styled from "styled-components";
 import TripComp from '../components/TripComp';
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const style = {
   background: {backgroundImage: `url(${bgImage})`,
@@ -47,9 +49,6 @@ const style = {
   }
 
  
-   
-
- 
 };
 
 const WhiteBlock = styled.div`
@@ -67,11 +66,21 @@ align-items: center;
 justify-items: flex-start; /* adjusted */
 row-gap: 4px`;
 
+const ButtonContainer = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+justify-content: space-between;
+padding-left: 40%;
+padding-top: 65%;
+grid-gap: 10px;
+`
+
+
 const InfoPage = () => {
   return ( 
         <div style={style.background}>
         <Wrapper>
-            <TripComp text={'trip'}> </TripComp> 
+            <TripComp text={'YVR ----------------------> YVV '}> </TripComp> 
         
         <Tabs > 
             <div label="Regular">
@@ -88,16 +97,21 @@ const InfoPage = () => {
             </div>
 
         </Tabs>
+        <ButtonContainer>
+              <Link to="/suggestion">
+              <Button bgColor={true} text={"New Search"} />
+              </Link>
+            <Link to="/">
+            <Button bgColor={false} text={"Go Back"} />
+            </Link>
+                
+            </ButtonContainer>
+        </Wrapper>
         <div>
            <RiskComp text={'LSKDjflkdj'}></RiskComp>
         </div>
         
-        {/* <TabButton style={style.button} text={'Regular'}/>
-        <TabButton  style={style.button}  text={'OfficalTravel'}/>
-        <TabButton  style={style.button}  text={'Visa'}/>
-        <TabButton  style={style.button}  text={'Flight Info'}/>
-        <FlightInfo/> */}
-       </Wrapper>
+       
       </div>
       
   );
