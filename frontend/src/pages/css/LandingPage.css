@@ -1,5 +1,5 @@
 .searchcontainer {
-    border: none !important;
+    border: none;
     padding: 5px;
     width: 60%;
     border-radius: 20px;
@@ -10,11 +10,7 @@
     line-height: 5px;
     width: 60%;
     outline: none;
-    border: none !important;
+    border: none;
     font-size: 20px;
     padding: 5px;
-}
-
-.suggestion {
-    position: static; 
 }

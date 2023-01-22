@@ -7,18 +7,20 @@ const DatePickerExample = () => {
   const [endDate, setEndDate] = useState(new Date());
 
   return (
-    <div>
-      <DatePicker
-        className="custom-input"
+    <div>
+        <div>
+         <DatePicker 
+        className="custom-input-top"
         value={startDate}
-        onChange={date => setStartDate(date)}
-      />
-      <DatePicker
-        className="datepicker"
+        onChange={date => setStartDate(date)}/>
+    </div>
+     <div> 
+    <DatePicker
+        className="custom-input-bottom"
         value={endDate}
-        onChange={date => setEndDate(date)}
-      />
-    </div>
+        onChange={date => setEndDate(date)} />
+      </ div>
+</div>
   );
 };
 
