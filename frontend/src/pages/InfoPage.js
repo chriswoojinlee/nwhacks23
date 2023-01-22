@@ -11,8 +11,9 @@ const style = {
     backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        height:  '100vh',
-        width: '100wv'
+        overflow: 'hidden',
+        height:  '103vh',
+        width: '100vw'
         
   },
   button: {
