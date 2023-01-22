@@ -7,17 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import BudgetPage from "./pages/BudgetPage";
 import SuggestionPage from "./pages/SuggestionPage";
 
-const style = {
-  background: {backgroundImage: `url(${bgImage})`,
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  resizeMode: 'contain',
-  width: window.outerWidth,
-  height: window.outerHeight
-  },
 
-}
 
 function App() {
   return (     

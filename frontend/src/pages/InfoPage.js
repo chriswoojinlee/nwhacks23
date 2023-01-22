@@ -1,12 +1,14 @@
 
 import * as React from 'react';
-import bgImage from "../components/img/bgImage.png";
+import bgImage from "../components/img/bgImage_Info.png";
 import Tabs from '../components/TabButton';
 import RiskComp from '../components/RiskComp';
 import styled from "styled-components";
 import TripComp from '../components/TripComp';
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import Background from '../components/Background';
+import { useState, useEffect } from 'react';
 
 const style = {
   background: {backgroundImage: `url(${bgImage})`,
@@ -76,10 +78,25 @@ grid-gap: 10px;
 `
 
 
+
 const InfoPage = () => {
+  const[loadingState, setLoading] = useState(false);
+   useEffect (() => {
+   setLoading(true);
+    
+   setTimeout(() => {
+     setLoading(false);
+   }, 2000);
+  },[]);
+
+
   return ( 
         <div style={style.background}>
-        <Wrapper>
+          {loadingState ? ( <div>
+               <Background/>  
+              </div> ) : 
+              ( <div>
+          <Wrapper>
             <TripComp text={'YVR ----------------------> YVV '}> </TripComp> 
         
         <Tabs > 
@@ -96,10 +113,12 @@ const InfoPage = () => {
               EM
             </div>
 
+
+
         </Tabs>
         <ButtonContainer>
               <Link to="/suggestion">
-              <Button bgColor={true} text={"New Search"} />
+              <Button bgColor={true} text={"Generate Trips"} />
               </Link>
             <Link to="/">
             <Button bgColor={false} text={"Go Back"} />
@@ -110,11 +129,12 @@ const InfoPage = () => {
         <div>
            <RiskComp text={'LSKDjflkdj'}></RiskComp>
         </div>
-        
-       
       </div>
+    
+              )}
+       </div>
+      );
       
-  );
 };
 
 export default InfoPage;
