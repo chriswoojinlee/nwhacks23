@@ -3,54 +3,73 @@ import { countries } from 'country-list-json';
 import styled from "styled-components";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import "./css/Searchbar.css"
 
-// const renderCountry = (country, id) => {
-//     return (
-//         <li key={id}>
-//           <b>{country.firstName} {country.lastName}</b> (<span>{country.info.age}</span>)
-//         </li>
-//     );
-// }
 
-const Input = styled.input`
-  font-size: 18px;
-  padding: 10px;
-  margin: 10px;
-  background: papayawhip;
-  border: none;
-  border-radius: 3px
-`;
+const Line = styled.hr`
+border-top: 1px solid rgba(216, 216, 216, 0.753);
+`
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-
-const Searchbar = () => {
+const Searchbar = ({placeholder}) => {
     const [search, setSearch] = useState("");
+    const [suggest, setSuggest] = useState([]);
+    const [resfound, setResfound] = useState(true);
 
-    const listItems = countries.map((country) => <div>{country.name}</div>);
+    // const searchCountry = countries.filter((country) => {
+    //   return country.name.toString().toLowerCase() === "" ? country : country.name.toString().toLowerCase().includes(search.toLowerCase())
+    // }).map((country) => <div key={country.name}>{country.name}</div>);
+    // // { listItems }
+    // // 
 
-    const searchCountry = countries.filter((country) => {
-      return country.name.toString().toLowerCase() === "" ? country : country.name.toString().toLowerCase().includes(search.toLowerCase())
-    }).map((country) => <div key={country.name}>{country.name}</div>);
-    // { listItems }
-    // 
+    const handleChange = (e) => {
+      let searchVal = e.target.value;
+      let suggestion = [];
+
+      if (searchVal.length > 0) {
+        suggestion = countries
+        .filter((country) => country.name.toString().toLowerCase().includes(searchVal.toLowerCase()))
+        .map((country) => country.name);
+
+        setResfound(suggestion.length !== 0 ? true : false);
+      }
+      setSearch(searchVal);
+      setSuggest(suggestion);
+    }
+
+    const suggestedText = (value) => {
+      setSearch(value);
+      setSuggest([]);
+      console.log(value);
+    };
+  
+
+    const getSuggestions = () => {
+      if (suggest.length === 0 && search !== "" && !resfound) {
+        return <p>Search Content Not Found</p>;
+      }
+
+      return (
+        <div>
+          {suggest.map((item, index) => {
+            return (
+              <div key={index}>
+                <div onClick={() => suggestedText(item)}>{item}</div>
+                {index !== suggest.length - 1 && <Line />}
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
 
     return(
-        <div>
-            <Form>
-              <InputGroup>
-              <Form.Control 
-              onChange={(e) => setSearch(e.target.value)} 
-              placeholder="Search Country" />
-              </InputGroup>
-            </Form>
-            <div>
-              { searchCountry }
+        <div className="searchcontainer">
+                <input className="search"
+                onChange={handleChange} 
+                placeholder={placeholder}/>
+              { getSuggestions() }
             </div>
-        </div>
+            
     );
 
     

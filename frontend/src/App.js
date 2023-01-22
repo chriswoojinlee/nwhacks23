@@ -14,22 +14,18 @@ const style = {
 
 }
 
+
+// import Button from "./components/Button"
+// import PlayButton from "./components/PlayButton"
+import DatePicker from "./components/DatePicker"
+
 function App() {
-  console.log(window.innerHeight);
-  console.log(window.innerWidth);
-  return ( 
-        
-        <div style={style.background}
-        >
-          <Trip style={style.trip}>
-            </Trip>
-          <Risk/>
-          
-          <Plane/>
-          <RiskTitle/>
-          {/* <Searchbar/> */}
-      </div>
-    
+  return (
+    <div>
+      <DatePicker />
+      <Searchbar placeholder={"Ending Destination"} />
+      <Searchbar placeholder={"Starting Destination"} />
+    </div>
   );
 }
 

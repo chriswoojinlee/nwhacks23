@@ -1,0 +1,13 @@
+.searchcontainer {
+    border: 1px solid gray;
+    padding: 5px;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.search {
+    line-height: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
