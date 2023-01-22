@@ -7,7 +7,14 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 
-const list = ["YVR", "YYC", "YYZ", "YYL", "YYG"];
+const listArr = [
+  {arr: "CPT", dept: "YVR"},
+  {arr: "CPT", dept: "YYC"},
+  {arr: "CPT", dept: "YYZ"},
+  {arr: "CPT", dept: "YYL"},
+  {arr: "CPT", dept: "YYG"},];
+
+const listDept = ["YVR", "YYC", "YYZ", "YYL", "YYG"];
 
 const style = {
     background: {backgroundImage: `url(${bgImage})`,
@@ -119,7 +126,7 @@ export const SuggestionPage = () => {
                 <Wrapper>
                 <TitleText>Trip Idea's</TitleText>
                 <TextInfo>See a trip that peaks your interest? Click on it for more info!</TextInfo>
-                {list.map((item) => <ImageText text={item + " ---------------> " + item} />)}
+                {listArr.map((item) => <ImageText text={item.dept + " ---------------> " + item.arr} />)}
             <ButtonContainer>
                 <Link to="/budget">
                 <Button bgColor={true} text={"New Search"} />

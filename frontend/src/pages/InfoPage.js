@@ -124,7 +124,7 @@ const InfoPage = () => {
               </div> ) : 
               ( <div>
           <Wrapper>
-            <TripComp text={'YVR ----------------------> YVV '} date={" 1/30/2023 ---> 2/21/2023"}> </TripComp> 
+            <TripComp text={'YVR ----------------------> CPT '} date={" 1/30/2023 ---> 2/21/2023"}> </TripComp> 
         
         <Tabs > 
             <div label="Regular">
