@@ -1,32 +1,24 @@
 import './App.css';
-
+import * as React from 'react';
 import bgImage from "./components/img/bgImage.png";
-import {Risk, Trip, Plane, Clouds} from './components/Images';
+import {Risk, Trip, Plane} from './components/Images';
 import Searchbar from "./components/Searchbar";
 import Background from './components/Background';
+import TabButton from './components/TabButton';
+import FlightInfo from './components/FlightInfo';
+import Tabs from './components/TabButton';
 
-const style = {
-  background: {backgroundImage: `url(${bgImage})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundsize:'cover',
-    overflow: 'hidden',
-    width: window.innerWidth,
-    height: window.innerHeight
-  },
-
-}
-
+import InfoPage from './pages/InfoPage'
+import RiskComp from './components/RiskComp';
 
 
 function App() {
   return ( 
-        
-        <div style={style.background}>
-            <Trip/>
-            <Clouds></Clouds>
-            <Plane/>
-            <Risk/>
+        <div >
+        <InfoPage/>
+       
       </div>
+      
   );
 }
 
