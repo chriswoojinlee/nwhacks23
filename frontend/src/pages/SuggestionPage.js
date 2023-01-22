@@ -4,6 +4,8 @@ import React from "react"
 import styled from "styled-components";
 import './css/LandingPage.css';
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
+
 
 const list = ["YVR", "YYC", "YYZ", "YYL", "YYG"];
 
@@ -25,6 +27,7 @@ min-width: 100%;
 height: 80%;
 border-radius: 35px;
 background: white;
+box-shadow: 0px 2px 3px #000000;
 `;
 
 const MyIcon = styled.img`
@@ -118,7 +121,9 @@ export const SuggestionPage = () => {
                 <TextInfo>See a trip that peaks your interest? Click on it for more info!</TextInfo>
                 {list.map((item) => <ImageText text={item + " ---------------> " + item} />)}
             <ButtonContainer>
-            <Button bgColor={true} text={"New Search"} />
+                <Link to="/budget">
+                <Button bgColor={true} text={"New Search"} />
+                </Link>
                 <Button bgColor={false} text={"Re-Generate"} />
             </ButtonContainer>
 

@@ -1,10 +1,11 @@
-import bgImage from "../components/img/bgImage.png";
+import bgImage from "../components/img/bg_image_landing.png";
 import React from "react"
 import Searchbar from "../components/Searchbar";
 import DatePicker from "../components/DatePicker";
 import styled from "styled-components";
 import './css/LandingPage.css';
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const style = {
     background: {backgroundImage: `url(${bgImage})`,
@@ -73,8 +74,8 @@ export const LandingPage = () => {
             <Searchbar placeholder={"Ending Destination"} />
             <DatePicker />
             <ButtonContainer>
-            <Button bgColor={true} text={"Search"} />
-                <Button bgColor={false} text={"Not Sure"} />
+              <Link to="/info"><Button bgColor={true} text={"Search"} /></Link>
+              <Link to="/budget"><Button bgColor={false} text={"Not Sure"} /></Link>
             </ButtonContainer>
 
                 </Wrapper>
