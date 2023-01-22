@@ -54,7 +54,8 @@ const ImageText = ({text}) => {
                     {text}
                 </FlightText>
             </WhiteBlock>
-            <MyIcon />
+            <Link to="/info">
+            <MyIcon /></Link>
             </ImageTextWrapper>
     );
 }
