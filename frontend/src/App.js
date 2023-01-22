@@ -15,6 +15,11 @@ const style = {
 
 }
 
+
+// import Button from "./components/Button"
+// import PlayButton from "./components/PlayButton"
+import DatePicker from "./components/DatePicker"
+
 function App() {
   return ( 
         
@@ -24,10 +29,11 @@ function App() {
             <Risk/>
             
             {/* <Background/> */}
-          
+            <DatePicker />
+      <Searchbar placeholder={"Ending Destination"} />
+      <Searchbar placeholder={"Starting Destination"} />
           {/* <Searchbar/> */}
       </div>
-    
   );
 }
 

@@ -7,9 +7,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 	@GetMapping("/landingPage")
-	public LandingPage greeting(@RequestParam(value = "originCountry", defaultValue = "Canada") String originCountry
-		, @RequestParam(value = "destinationCountry", defaultValue = "China") String destinationCountry
-		, @RequestParam(value = "departureDate", defaultValue = "1/22/2023") String departureDate) {
-		return new LandingPage(originCountry, destinationCountry, departureDate);
+	public LandingPage page(@RequestParam(value = "originCity", defaultValue = "Vancouver") String originCity
+		, @RequestParam(value = "originIATA", defaultValue = "YVR") String originIATA
+		, @RequestParam(value = "destinationCity", defaultValue = "Calgary") String destinationCity
+		, @RequestParam(value = "destinationIATA", defaultValue = "YYC") String destinationIATA
+		, @RequestParam(value = "departureDate", defaultValue = "2023-1-21") String departureDate
+		, @RequestParam(value = "returnDate", defaultValue = "2023-1-27") String returnDate
+		, @RequestParam(value = "cabinClass", defaultValue = "Economy") String cabinClass) {
+		return new LandingPage(originCity, originIATA, destinationCity, destinationIATA, departureDate, returnDate, cabinClass);
+	}
+
+	@GetMapping("/price")
+	public Object price(@RequestParam(value = "originCity", defaultValue = "Vancouver") String originCity
+		, @RequestParam(value = "originIATA", defaultValue = "YVR") String originIATA
+		, @RequestParam(value = "destinationCity", defaultValue = "Calgary") String destinationCity
+		, @RequestParam(value = "destinationIATA", defaultValue = "YYC") String destinationIATA
+		, @RequestParam(value = "departureDate", defaultValue = "2023-2-21") String departureDate
+		, @RequestParam(value = "returnDate", defaultValue = "2023-2-27") String returnDate
+		, @RequestParam(value = "cabinClass", defaultValue = "Economy") String cabinClass) throws Exception {
+		LandingPage landingPage = new LandingPage(originCity, originIATA, destinationCity, destinationIATA, departureDate, returnDate, cabinClass);
+		return landingPage.getPrice();
 	}
 }
