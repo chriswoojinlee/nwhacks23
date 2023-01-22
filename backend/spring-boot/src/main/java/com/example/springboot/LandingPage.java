@@ -12,8 +12,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
 public record LandingPage(String originCity, String originIATA, String destinationCity, String destinationIATA, String departureDate, String returnDate, String cabinClass) { 
-    static String airportCodesAPIkey = "5f19098f1d";
-
     public Object getPrice() throws IOException, ParseException {
         String GET_URL = "https://api.flightapi.io/roundtrip/63cc81c87e4ce38e4b344795/" + originIATA + "/" + destinationIATA + "/" + departureDate + "/" + returnDate + "/1/0/0/" + cabinClass + "/CAD";
         URL obj = new URL(GET_URL);
