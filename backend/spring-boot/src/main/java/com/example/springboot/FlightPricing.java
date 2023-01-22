@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
-public record LandingPage(String originCity, String originIATA, String destinationCity, String destinationIATA, String departureDate, String returnDate, String cabinClass) { 
+public record FlightPricing(String originCity, String originIATA, String destinationCity, String destinationIATA, String departureDate, String returnDate, String cabinClass) { 
     public Object getPrice() throws IOException, ParseException {
         String GET_URL = "https://api.flightapi.io/roundtrip/63cc81c87e4ce38e4b344795/" + originIATA + "/" + destinationIATA + "/" + departureDate + "/" + returnDate + "/1/0/0/" + cabinClass + "/CAD";
         URL obj = new URL(GET_URL);
@@ -32,8 +32,9 @@ public record LandingPage(String originCity, String originIATA, String destinati
 
 			JSONParser parser = new JSONParser(response.toString());  
             LinkedHashMap<String, Object> json = parser.object();
-            Object price = json.get("fares");
-            return price;
+			Object fares = json.get("fares");
+
+            return fares;
 		} else {
 			System.out.println("GET request did not work.");
 		}

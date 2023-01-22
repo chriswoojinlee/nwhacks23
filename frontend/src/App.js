@@ -5,12 +5,22 @@ import InfoPage from './pages/InfoPage'
 // import PlayButton from "./components/PlayButton"
 import LandingPage from "./pages/LandingPage";
 import BudgetPage from "./pages/BudgetPage";
-import SuggestionPage from "./pages/SuggestionPage";     
+import SuggestionPage from "./pages/SuggestionPage";
 
+const style = {
+  background: {backgroundImage: `url(${bgImage})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  resizeMode: 'contain',
+  width: window.outerWidth,
+  height: window.outerHeight
+  },
+
+}
 
 function App() {
-  return ( 
-    
+  return (     
         <div >
         <Routes>
         <Route path="/" element={ <LandingPage /> } />
@@ -19,7 +29,6 @@ function App() {
         <Route path="/budget" element={ <BudgetPage/> } />
       </Routes>
       </div>
-       
   );
 }
 
