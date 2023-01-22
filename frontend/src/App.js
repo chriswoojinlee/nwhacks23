@@ -7,8 +7,6 @@ import LandingPage from "./pages/LandingPage";
 import BudgetPage from "./pages/BudgetPage";
 import SuggestionPage from "./pages/SuggestionPage";
 
-
-
 function App() {
   return (     
         <div >

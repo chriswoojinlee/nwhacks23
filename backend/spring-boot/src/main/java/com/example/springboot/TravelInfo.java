@@ -4,7 +4,6 @@ package com.example.springboot;
 import com.gargoylesoftware.htmlunit.*;
 import com.gargoylesoftware.htmlunit.html.*;
 import java.io.IOException;
-import java.util.List;
 
 public record TravelInfo(String country) {
     public Object getTravelInfo() {
